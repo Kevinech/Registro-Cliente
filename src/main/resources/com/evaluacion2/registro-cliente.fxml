@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.evaluacion2.controllers.RegistroClienteController"
+            onKeyPressed="#manejarTecla" stylesheets="@styles.css" prefWidth="960" prefHeight="720">
+    <fx:define><ToggleGroup fx:id="solicitudGroup"/></fx:define>
+    <top>
+        <VBox spacing="6" styleClass="cabecera">
+            <Label text="Registrar cliente" styleClass="titulo"/>
+            <Label text="Completa los campos con *. La fotografía y los servicios son opcionales." styleClass="nota"/>
+        </VBox>
+    </top>
+    <center>
+        <ScrollPane fitToWidth="true" hbarPolicy="NEVER">
+            <content>
+                <HBox spacing="20" styleClass="formulario">
+                    <VBox spacing="12" HBox.hgrow="ALWAYS" prefWidth="540" styleClass="tarjeta">
+                        <Label text="Datos del cliente" styleClass="subtitulo"/>
+                        <GridPane hgap="16" vgap="8">
+                            <columnConstraints>
+                                <ColumnConstraints percentWidth="50" hgrow="ALWAYS"/>
+                                <ColumnConstraints percentWidth="50" hgrow="ALWAYS"/>
+                            </columnConstraints>
+                            <Label text="Nombres *" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                            <Label text="Apellidos *" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                            <TextField fx:id="nombresField" promptText="Nombres" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                            <TextField fx:id="apellidosField" promptText="Apellidos" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                            <Label text="Tipo de cliente *" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                            <Label text="Ciudad *" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                            <ComboBox fx:id="tipoClienteCombo" promptText="Selecciona un tipo" maxWidth="Infinity" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                            <ComboBox fx:id="ciudadCombo" promptText="Selecciona una ciudad" maxWidth="Infinity" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+                        </GridPane>
+                        <Label text="Fecha de nacimiento *"/>
+                        <DatePicker fx:id="fechaNacimientoPicker" promptText="Selecciona una fecha" maxWidth="Infinity"/>
+                        <Label text="Tipo de solicitud *" styleClass="subtitulo"/>
+                        <FlowPane hgap="16" vgap="8">
+                            <RadioButton text="Información" toggleGroup="$solicitudGroup"/>
+                            <RadioButton text="Servicio" toggleGroup="$solicitudGroup"/>
+                            <RadioButton text="Reclamo" toggleGroup="$solicitudGroup"/>
+                        </FlowPane>
+                        <Label text="Servicios de interés" styleClass="subtitulo"/>
+                        <FlowPane hgap="16" vgap="8">
+                            <CheckBox fx:id="asesoriaCheck" text="Asesoría" onAction="#actualizarServicios"/>
+                            <CheckBox fx:id="soporteCheck" text="Soporte" onAction="#actualizarServicios"/>
+                            <CheckBox fx:id="seguimientoCheck" text="Seguimiento" onAction="#actualizarServicios"/>
+                        </FlowPane>
+                        <Label text="Servicios seleccionados" styleClass="nota"/>
+                        <ListView fx:id="serviciosList" prefHeight="95" minHeight="95"/>
+                    </VBox>
+                    <VBox spacing="14" alignment="TOP_CENTER" prefWidth="260" minWidth="230" maxWidth="260" styleClass="tarjeta">
+                        <Label text="Fotografía" styleClass="subtitulo"/>
+                        <StackPane prefHeight="220" minHeight="220" styleClass="marco-foto">
+                            <ImageView fx:id="fotoView" fitWidth="210" fitHeight="210" preserveRatio="true"/>
+                        </StackPane>
+                        <Label fx:id="fotoLabel" text="Sin fotografía" styleClass="nota" wrapText="true" maxWidth="220"/>
+                        <Button text="Seleccionar fotografía" onAction="#seleccionarFoto" maxWidth="Infinity"/>
+                        <Label text="Formatos: PNG, JPG o GIF." styleClass="nota"/>
+                    </VBox>
+                </HBox>
+            </content>
+        </ScrollPane>
+    </center>
+    <bottom>
+        <HBox spacing="12" alignment="CENTER_RIGHT" styleClass="pie">
+            <Button text="Volver" onAction="#volver" styleClass="secundario"/>
+            <Button text="Limpiar" onAction="#limpiar" styleClass="secundario"/>
+            <Button text="Guardar" onAction="#guardar"/>
+        </HBox>
+    </bottom>
+</BorderPane>

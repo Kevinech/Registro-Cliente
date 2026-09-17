@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.evaluacion2.controllers.DetalleClienteController"
+            onKeyPressed="#manejarTecla" stylesheets="@styles.css" prefWidth="960" prefHeight="720">
+    <top>
+        <VBox spacing="6" styleClass="cabecera">
+            <Label text="Detalle del cliente" styleClass="titulo"/>
+            <Label text="Información del cliente seleccionado." styleClass="nota"/>
+        </VBox>
+    </top>
+    <center>
+        <ScrollPane fitToWidth="true" hbarPolicy="NEVER">
+            <content>
+                <HBox spacing="20" styleClass="formulario">
+                    <VBox spacing="12" HBox.hgrow="ALWAYS" prefWidth="540" styleClass="tarjeta">
+                        <Label text="Nombre completo" styleClass="subtitulo"/>
+                        <Label fx:id="nombreLabel" wrapText="true" maxWidth="Infinity"/>
+                        <Separator/>
+                        <Label text="Tipo de cliente" styleClass="subtitulo"/>
+                        <Label fx:id="tipoLabel"/>
+                        <Label text="Ciudad" styleClass="subtitulo"/>
+                        <Label fx:id="ciudadLabel"/>
+                        <Label text="Fecha de nacimiento" styleClass="subtitulo"/>
+                        <Label fx:id="fechaLabel"/>
+                        <Label text="Tipo de solicitud" styleClass="subtitulo"/>
+                        <Label fx:id="solicitudLabel"/>
+                        <Label text="Servicios de interés" styleClass="subtitulo"/>
+                        <Label fx:id="serviciosLabel" wrapText="true" maxWidth="Infinity"/>
+                    </VBox>
+                    <VBox spacing="14" alignment="TOP_CENTER" prefWidth="260" minWidth="230" maxWidth="260" styleClass="tarjeta">
+                        <Label text="Fotografía" styleClass="subtitulo"/>
+                        <StackPane prefHeight="220" minHeight="220" styleClass="marco-foto">
+                            <ImageView fx:id="fotoView" fitWidth="210" fitHeight="210" preserveRatio="true"/>
+                        </StackPane>
+                        <Label fx:id="fotoLabel" text="Sin fotografía" styleClass="nota" wrapText="true"/>
+                    </VBox>
+                </HBox>
+            </content>
+        </ScrollPane>
+    </center>
+    <bottom>
+        <HBox alignment="CENTER_RIGHT" styleClass="pie">
+            <Button text="Volver" onAction="#volver" styleClass="secundario"/>
+        </HBox>
+    </bottom>
+</BorderPane>

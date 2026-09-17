@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.evaluacion2.controllers.PrincipalController"
+            onKeyPressed="#manejarTecla" stylesheets="@styles.css" prefWidth="960" prefHeight="720">
+    <top>
+        <VBox>
+            <MenuBar>
+                <menus>
+                    <Menu text="Clientes">
+                        <items>
+                            <MenuItem text="Registrar cliente" onAction="#abrirRegistro"/>
+                            <MenuItem text="Consultar clientes" onAction="#abrirConsulta"/>
+                            <SeparatorMenuItem/>
+                            <MenuItem text="Salir" onAction="#salir"/>
+                        </items>
+                    </Menu>
+                    <Menu text="Herramientas">
+                        <items><MenuItem text="Seleccionar carpeta" onAction="#seleccionarCarpeta"/></items>
+                    </Menu>
+                    <Menu text="Ayuda">
+                        <items><MenuItem text="Acerca de" onAction="#mostrarAcercaDe"/></items>
+                    </Menu>
+                </menus>
+            </MenuBar>
+            <ToolBar>
+                <items>
+                    <Button text="Registrar cliente" onAction="#abrirRegistro"/>
+                    <Button text="Consultar clientes" onAction="#abrirConsulta"/>
+                    <Separator/>
+                    <Button text="Seleccionar carpeta" onAction="#seleccionarCarpeta" styleClass="secundario"/>
+                </items>
+            </ToolBar>
+        </VBox>
+    </top>
+    <center>
+        <VBox spacing="20" alignment="CENTER" styleClass="pantalla">
+            <Label text="Gestión de clientes" styleClass="titulo"/>
+            <Label text="Selecciona una opción para comenzar." styleClass="nota"/>
+            <HBox spacing="20" alignment="CENTER">
+                <VBox spacing="14" prefWidth="340" styleClass="tarjeta">
+                    <Label text="Registrar" styleClass="subtitulo"/>
+                    <Label text="Completa los datos personales, la solicitud y los servicios de interés." wrapText="true"/>
+                    <Button text="Registrar cliente" maxWidth="Infinity" onAction="#abrirRegistro">
+                        <contextMenu>
+                            <ContextMenu>
+                                <items>
+                                    <MenuItem text="Registrar cliente" onAction="#abrirRegistro"/>
+                                    <MenuItem text="Consultar clientes" onAction="#abrirConsulta"/>
+                                </items>
+                            </ContextMenu>
+                        </contextMenu>
+                    </Button>
+                </VBox>
+                <VBox spacing="14" prefWidth="340" styleClass="tarjeta">
+                    <Label text="Consultar" styleClass="subtitulo"/>
+                    <Label text="Revisa los clientes registrados y abre el detalle de cada uno." wrapText="true"/>
+                    <Button text="Consultar clientes" maxWidth="Infinity" onAction="#abrirConsulta"/>
+                </VBox>
+            </HBox>
+            <Label text="Clic derecho en Registrar cliente para ver los accesos rápidos." styleClass="nota"/>
+            <Label text="Los datos se conservan únicamente mientras la aplicación está abierta." styleClass="nota"/>
+        </VBox>
+    </center>
+    <bottom>
+        <HBox spacing="12" alignment="CENTER_RIGHT" styleClass="pie">
+            <Button text="Acerca de" onAction="#mostrarAcercaDe" styleClass="secundario"/>
+            <Button text="Salir" onAction="#salir"/>
+        </HBox>
+    </bottom>
+</BorderPane>

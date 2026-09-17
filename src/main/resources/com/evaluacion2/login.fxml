@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.evaluacion2.controllers.LoginController"
+      fx:id="pantalla" alignment="CENTER" spacing="18" styleClass="pantalla" stylesheets="@styles.css"
+      prefWidth="960" prefHeight="720">
+    <Label text="Registro de clientes" styleClass="titulo"/>
+    <Label text="Ingresa para registrar y consultar clientes." styleClass="nota"/>
+    <VBox spacing="12" maxWidth="380" styleClass="tarjeta">
+        <Label text="Iniciar sesión" styleClass="subtitulo"/>
+        <Label text="Usuario"/>
+        <TextField fx:id="usuarioField" promptText="Escribe tu usuario"/>
+        <Label text="Contraseña"/>
+        <PasswordField fx:id="contrasenaField" promptText="Escribe tu contraseña"/>
+        <HBox spacing="12" alignment="CENTER_RIGHT">
+            <Button text="Salir" onAction="#salir" styleClass="secundario"/>
+            <Button text="Ingresar" onAction="#ingresar"/>
+        </HBox>
+    </VBox>
+    <Label text="ENTER: ingresar · ESC: salir" styleClass="nota"/>
+</VBox>
