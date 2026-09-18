@@ -21,18 +21,40 @@ public class LoginController {
         pantalla.addEventFilter(KeyEvent.KEY_PRESSED, this::manejarTecla);
     }
 
+    private static final String USUARIO_VALIDO = "admin";
+    private static final String CLAVE_VALIDA = "1234";
+
     @FXML
     private void ingresar(ActionEvent event) {
         iniciarSesion();
     }
 
     private void iniciarSesion() {
-        if (usuarioField.getText().isBlank() || contrasenaField.getText().isBlank()) {
-            Main.mostrarAlerta(Alert.AlertType.WARNING, "Datos incompletos",
-                    "Escribe el usuario y la contraseña.");
+
+        String usuario = usuarioField.getText().trim();
+        String clave = contrasenaField.getText();
+
+        if (usuario.isBlank() || clave.isBlank()) {
+            Main.mostrarAlerta(
+                    Alert.AlertType.WARNING,
+                    "Datos incompletos",
+                    "Debes ingresar usuario y contraseña."
+            );
             return;
         }
-        Main.mostrarVista("principal.fxml");
+
+        if (usuario.equals(USUARIO_VALIDO) &&
+                clave.equals(CLAVE_VALIDA)) {
+
+            Main.mostrarVista("principal.fxml");
+
+        } else {
+            Main.mostrarAlerta(
+                    Alert.AlertType.ERROR,
+                    "Acceso denegado",
+                    "Usuario o contraseña incorrectos."
+            );
+        }
     }
 
     @FXML
