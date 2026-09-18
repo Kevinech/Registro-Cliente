@@ -55,7 +55,7 @@ Los clientes se pierden al cerrar la aplicación.
 | `model/DatosClientes.java` | Una única ObservableList compartida en memoria. |
 
 Las clases están en `src/main/java/com/evaluacion2/`.
-Las cinco vistas y `styles.css` están en `src/main/resources/com/evaluacion2/`.
+Las cinco vistas, con estilos inline en FXML, están en `src/main/resources/com/evaluacion2/`.
 Cada FXML declara su controlador y su CSS relativo, y puede abrirse en Scene Builder.
 No se añadieron capas, clases de producción ni dependencias adicionales.
 Se conservaron las versiones del `pom.xml`.

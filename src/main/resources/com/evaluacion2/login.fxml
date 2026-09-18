@@ -3,20 +3,20 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.image.ImageView?>
 <VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.evaluacion2.controllers.LoginController"
-      fx:id="pantalla" alignment="CENTER" spacing="18" styleClass="pantalla" stylesheets="@styles.css"
-      prefWidth="960" prefHeight="720">
-    <Label text="Registro de clientes" styleClass="titulo"/>
-    <Label text="Ingresa para registrar y consultar clientes." styleClass="nota"/>
-    <VBox spacing="12" maxWidth="380" styleClass="tarjeta">
-        <Label text="Iniciar sesión" styleClass="subtitulo"/>
-        <Label text="Usuario"/>
-        <TextField fx:id="usuarioField" promptText="Escribe tu usuario"/>
-        <Label text="Contraseña"/>
-        <PasswordField fx:id="contrasenaField" promptText="Escribe tu contraseña"/>
+      fx:id="pantalla" alignment="CENTER" spacing="18"
+      prefWidth="960" prefHeight="720" style="-fx-font-family: 'Segoe UI'; -fx-font-size: 14px; -fx-background-color: #f4f6f9; -fx-padding: 28;">
+    <Label text="Registro de clientes" style="-fx-text-fill: #193e68; -fx-font-size: 26px; -fx-font-weight: bold;"/>
+    <Label text="Ingresa para registrar y consultar clientes." style="-fx-text-fill: #596b7e; -fx-wrap-text: true;"/>
+    <VBox spacing="12" maxWidth="380" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 6; -fx-border-color: #dce2ea; -fx-border-radius: 6;">
+        <Label text="Iniciar sesión" style="-fx-text-fill: #193e68; -fx-font-size: 16px; -fx-font-weight: bold;"/>
+        <Label text="Usuario" style="-fx-text-fill: #29384a;"/>
+        <TextField fx:id="usuarioField" promptText="Escribe tu usuario" style="-fx-background-color: white; -fx-border-color: #cbd5e1; -fx-border-radius: 4; -fx-background-radius: 4; -fx-padding: 9;"/>
+        <Label text="Contraseña" style="-fx-text-fill: #29384a;"/>
+        <PasswordField fx:id="contrasenaField" promptText="Escribe tu contraseña" style="-fx-background-color: white; -fx-border-color: #cbd5e1; -fx-border-radius: 4; -fx-background-radius: 4; -fx-padding: 9;"/>
         <HBox spacing="12" alignment="CENTER_RIGHT">
-            <Button text="Salir" onAction="#salir" styleClass="secundario"/>
-            <Button text="Ingresar" onAction="#ingresar"/>
+            <Button text="Salir" onAction="#salir" style="-fx-background-color: #e8eef6; -fx-text-fill: #193e68; -fx-padding: 10 18; -fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: #cbd5e1; -fx-cursor: hand;"/>
+            <Button text="Ingresar" onAction="#ingresar" style="-fx-background-color: #2563ab; -fx-text-fill: white; -fx-padding: 10 18; -fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: transparent; -fx-cursor: hand;"/>
         </HBox>
     </VBox>
-    <Label text="ENTER: ingresar · ESC: salir" styleClass="nota"/>
+    <Label text="ENTER: ingresar · ESC: salir" style="-fx-text-fill: #596b7e; -fx-wrap-text: true;"/>
 </VBox>

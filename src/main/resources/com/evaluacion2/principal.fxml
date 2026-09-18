@@ -3,10 +3,10 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.image.ImageView?>
 <BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.evaluacion2.controllers.PrincipalController"
-            onKeyPressed="#manejarTecla" stylesheets="@styles.css" prefWidth="960" prefHeight="720">
+            onKeyPressed="#manejarTecla" prefWidth="960" prefHeight="720" style="-fx-font-family: 'Segoe UI'; -fx-font-size: 14px; -fx-background-color: #f4f6f9;">
     <top>
         <VBox>
-            <MenuBar>
+            <MenuBar style="-fx-background-color: white;">
                 <menus>
                     <Menu text="Clientes">
                         <items>
@@ -24,25 +24,25 @@
                     </Menu>
                 </menus>
             </MenuBar>
-            <ToolBar>
+            <ToolBar style="-fx-background-color: white; -fx-padding: 10 20; -fx-spacing: 10;">
                 <items>
-                    <Button text="Registrar cliente" onAction="#abrirRegistro"/>
-                    <Button text="Consultar clientes" onAction="#abrirConsulta"/>
+                    <Button text="Registrar cliente" onAction="#abrirRegistro" style="-fx-background-color: #2563ab; -fx-text-fill: white; -fx-padding: 10 18; -fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: transparent; -fx-cursor: hand;"/>
+                    <Button text="Consultar clientes" onAction="#abrirConsulta" style="-fx-background-color: #2563ab; -fx-text-fill: white; -fx-padding: 10 18; -fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: transparent; -fx-cursor: hand;"/>
                     <Separator/>
-                    <Button text="Seleccionar carpeta" onAction="#seleccionarCarpeta" styleClass="secundario"/>
+                    <Button text="Seleccionar carpeta" onAction="#seleccionarCarpeta" style="-fx-background-color: #e8eef6; -fx-text-fill: #193e68; -fx-padding: 10 18; -fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: #cbd5e1; -fx-cursor: hand;"/>
                 </items>
             </ToolBar>
         </VBox>
     </top>
     <center>
-        <VBox spacing="20" alignment="CENTER" styleClass="pantalla">
-            <Label text="Gestión de clientes" styleClass="titulo"/>
-            <Label text="Selecciona una opción para comenzar." styleClass="nota"/>
+        <VBox spacing="20" alignment="CENTER" style="-fx-padding: 28;">
+            <Label text="Gestión de clientes" style="-fx-text-fill: #193e68; -fx-font-size: 26px; -fx-font-weight: bold;"/>
+            <Label text="Selecciona una opción para comenzar." style="-fx-text-fill: #596b7e; -fx-wrap-text: true;"/>
             <HBox spacing="20" alignment="CENTER">
-                <VBox spacing="14" prefWidth="340" styleClass="tarjeta">
-                    <Label text="Registrar" styleClass="subtitulo"/>
-                    <Label text="Completa los datos personales, la solicitud y los servicios de interés." wrapText="true"/>
-                    <Button text="Registrar cliente" maxWidth="Infinity" onAction="#abrirRegistro">
+                <VBox spacing="14" prefWidth="340" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 6; -fx-border-color: #dce2ea; -fx-border-radius: 6;">
+                    <Label text="Registrar" style="-fx-text-fill: #193e68; -fx-font-size: 16px; -fx-font-weight: bold;"/>
+                    <Label text="Completa los datos personales, la solicitud y los servicios de interés." wrapText="true" style="-fx-text-fill: #29384a;"/>
+                    <Button text="Registrar cliente" maxWidth="Infinity" onAction="#abrirRegistro" style="-fx-background-color: #2563ab; -fx-text-fill: white; -fx-padding: 10 18; -fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: transparent; -fx-cursor: hand;">
                         <contextMenu>
                             <ContextMenu>
                                 <items>
@@ -53,20 +53,20 @@
                         </contextMenu>
                     </Button>
                 </VBox>
-                <VBox spacing="14" prefWidth="340" styleClass="tarjeta">
-                    <Label text="Consultar" styleClass="subtitulo"/>
-                    <Label text="Revisa los clientes registrados y abre el detalle de cada uno." wrapText="true"/>
-                    <Button text="Consultar clientes" maxWidth="Infinity" onAction="#abrirConsulta"/>
+                <VBox spacing="14" prefWidth="340" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 6; -fx-border-color: #dce2ea; -fx-border-radius: 6;">
+                    <Label text="Consultar" style="-fx-text-fill: #193e68; -fx-font-size: 16px; -fx-font-weight: bold;"/>
+                    <Label text="Revisa los clientes registrados y abre el detalle de cada uno." wrapText="true" style="-fx-text-fill: #29384a;"/>
+                    <Button text="Consultar clientes" maxWidth="Infinity" onAction="#abrirConsulta" style="-fx-background-color: #2563ab; -fx-text-fill: white; -fx-padding: 10 18; -fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: transparent; -fx-cursor: hand;"/>
                 </VBox>
             </HBox>
-            <Label text="Clic derecho en Registrar cliente para ver los accesos rápidos." styleClass="nota"/>
-            <Label text="Los datos se conservan únicamente mientras la aplicación está abierta." styleClass="nota"/>
+            <Label text="Clic derecho en Registrar cliente para ver los accesos rápidos." style="-fx-text-fill: #596b7e; -fx-wrap-text: true;"/>
+            <Label text="Los datos se conservan únicamente mientras la aplicación está abierta." style="-fx-text-fill: #596b7e; -fx-wrap-text: true;"/>
         </VBox>
     </center>
     <bottom>
-        <HBox spacing="12" alignment="CENTER_RIGHT" styleClass="pie">
-            <Button text="Acerca de" onAction="#mostrarAcercaDe" styleClass="secundario"/>
-            <Button text="Salir" onAction="#salir"/>
+        <HBox spacing="12" alignment="CENTER_RIGHT" style="-fx-padding: 16 28 20 28;">
+            <Button text="Acerca de" onAction="#mostrarAcercaDe" style="-fx-background-color: #e8eef6; -fx-text-fill: #193e68; -fx-padding: 10 18; -fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: #cbd5e1; -fx-cursor: hand;"/>
+            <Button text="Salir" onAction="#salir" style="-fx-background-color: #2563ab; -fx-text-fill: white; -fx-padding: 10 18; -fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: transparent; -fx-cursor: hand;"/>
         </HBox>
     </bottom>
 </BorderPane>

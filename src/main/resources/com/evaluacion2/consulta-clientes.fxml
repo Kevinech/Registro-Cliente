@@ -3,11 +3,11 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.image.ImageView?>
 <VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.evaluacion2.controllers.ConsultaClientesController"
-      onKeyPressed="#manejarTecla" spacing="16" styleClass="pantalla" stylesheets="@styles.css"
-      prefWidth="960" prefHeight="720">
-    <Label text="Consultar clientes" styleClass="titulo"/>
-    <Label text="Haz doble clic sobre un cliente para ver su información." styleClass="nota"/>
-    <TableView fx:id="clientesTable" VBox.vgrow="ALWAYS">
+      onKeyPressed="#manejarTecla" spacing="16"
+      prefWidth="960" prefHeight="720" style="-fx-font-family: 'Segoe UI'; -fx-font-size: 14px; -fx-background-color: #f4f6f9; -fx-padding: 28;">
+    <Label text="Consultar clientes" style="-fx-text-fill: #193e68; -fx-font-size: 26px; -fx-font-weight: bold;"/>
+    <Label text="Haz doble clic sobre un cliente para ver su información." style="-fx-text-fill: #596b7e; -fx-wrap-text: true;"/>
+    <TableView fx:id="clientesTable" VBox.vgrow="ALWAYS" style="-fx-border-color: #dce2ea; -fx-background-color: white;">
         <columns>
             <TableColumn fx:id="nombreColumn" text="Nombre completo" prefWidth="250" minWidth="160"/>
             <TableColumn fx:id="tipoColumn" text="Tipo de cliente" prefWidth="140" minWidth="110"/>
@@ -15,12 +15,12 @@
             <TableColumn fx:id="fechaColumn" text="Fecha de nacimiento" prefWidth="175" minWidth="160"/>
             <TableColumn fx:id="solicitudColumn" text="Tipo de solicitud" prefWidth="150" minWidth="125"/>
         </columns>
-        <placeholder><Label text="No hay clientes registrados. Registra uno desde el menú principal."/></placeholder>
+        <placeholder><Label text="No hay clientes registrados. Registra uno desde el menú principal." style="-fx-text-fill: #29384a;"/></placeholder>
     </TableView>
     <HBox spacing="12" alignment="CENTER_LEFT">
-        <Label fx:id="cantidadLabel" text="Clientes registrados: 0" styleClass="nota"/>
+        <Label fx:id="cantidadLabel" text="Clientes registrados: 0" style="-fx-text-fill: #596b7e; -fx-wrap-text: true;"/>
         <Region HBox.hgrow="ALWAYS"/>
-        <Button text="Volver" onAction="#volver" styleClass="secundario"/>
-        <Button text="Ver detalle" onAction="#verDetalle"/>
+        <Button text="Volver" onAction="#volver" style="-fx-background-color: #e8eef6; -fx-text-fill: #193e68; -fx-padding: 10 18; -fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: #cbd5e1; -fx-cursor: hand;"/>
+        <Button text="Ver detalle" onAction="#verDetalle" style="-fx-background-color: #2563ab; -fx-text-fill: white; -fx-padding: 10 18; -fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: transparent; -fx-cursor: hand;"/>
     </HBox>
 </VBox>

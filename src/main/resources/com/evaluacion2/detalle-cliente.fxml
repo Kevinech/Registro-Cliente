@@ -3,46 +3,46 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.image.ImageView?>
 <BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.evaluacion2.controllers.DetalleClienteController"
-            onKeyPressed="#manejarTecla" stylesheets="@styles.css" prefWidth="960" prefHeight="720">
+            onKeyPressed="#manejarTecla" prefWidth="960" prefHeight="720" style="-fx-font-family: 'Segoe UI'; -fx-font-size: 14px; -fx-background-color: #f4f6f9;">
     <top>
-        <VBox spacing="6" styleClass="cabecera">
-            <Label text="Detalle del cliente" styleClass="titulo"/>
-            <Label text="Información del cliente seleccionado." styleClass="nota"/>
+        <VBox spacing="6" style="-fx-padding: 24 28 18 28;">
+            <Label text="Detalle del cliente" style="-fx-text-fill: #193e68; -fx-font-size: 26px; -fx-font-weight: bold;"/>
+            <Label text="Información del cliente seleccionado." style="-fx-text-fill: #596b7e; -fx-wrap-text: true;"/>
         </VBox>
     </top>
     <center>
-        <ScrollPane fitToWidth="true" hbarPolicy="NEVER">
+        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" style="-fx-background-color: #f4f6f9; -fx-background: #f4f6f9;">
             <content>
-                <HBox spacing="20" styleClass="formulario">
-                    <VBox spacing="12" HBox.hgrow="ALWAYS" prefWidth="540" styleClass="tarjeta">
-                        <Label text="Nombre completo" styleClass="subtitulo"/>
-                        <Label fx:id="nombreLabel" wrapText="true" maxWidth="Infinity"/>
+                <HBox spacing="20" style="-fx-padding: 0 28 12 28;">
+                    <VBox spacing="12" HBox.hgrow="ALWAYS" prefWidth="540" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 6; -fx-border-color: #dce2ea; -fx-border-radius: 6;">
+                        <Label text="Nombre completo" style="-fx-text-fill: #193e68; -fx-font-size: 16px; -fx-font-weight: bold;"/>
+                        <Label fx:id="nombreLabel" wrapText="true" maxWidth="Infinity" style="-fx-text-fill: #29384a;"/>
                         <Separator/>
-                        <Label text="Tipo de cliente" styleClass="subtitulo"/>
-                        <Label fx:id="tipoLabel"/>
-                        <Label text="Ciudad" styleClass="subtitulo"/>
-                        <Label fx:id="ciudadLabel"/>
-                        <Label text="Fecha de nacimiento" styleClass="subtitulo"/>
-                        <Label fx:id="fechaLabel"/>
-                        <Label text="Tipo de solicitud" styleClass="subtitulo"/>
-                        <Label fx:id="solicitudLabel"/>
-                        <Label text="Servicios de interés" styleClass="subtitulo"/>
-                        <Label fx:id="serviciosLabel" wrapText="true" maxWidth="Infinity"/>
+                        <Label text="Tipo de cliente" style="-fx-text-fill: #193e68; -fx-font-size: 16px; -fx-font-weight: bold;"/>
+                        <Label fx:id="tipoLabel" style="-fx-text-fill: #29384a;"/>
+                        <Label text="Ciudad" style="-fx-text-fill: #193e68; -fx-font-size: 16px; -fx-font-weight: bold;"/>
+                        <Label fx:id="ciudadLabel" style="-fx-text-fill: #29384a;"/>
+                        <Label text="Fecha de nacimiento" style="-fx-text-fill: #193e68; -fx-font-size: 16px; -fx-font-weight: bold;"/>
+                        <Label fx:id="fechaLabel" style="-fx-text-fill: #29384a;"/>
+                        <Label text="Tipo de solicitud" style="-fx-text-fill: #193e68; -fx-font-size: 16px; -fx-font-weight: bold;"/>
+                        <Label fx:id="solicitudLabel" style="-fx-text-fill: #29384a;"/>
+                        <Label text="Servicios de interés" style="-fx-text-fill: #193e68; -fx-font-size: 16px; -fx-font-weight: bold;"/>
+                        <Label fx:id="serviciosLabel" wrapText="true" maxWidth="Infinity" style="-fx-text-fill: #29384a;"/>
                     </VBox>
-                    <VBox spacing="14" alignment="TOP_CENTER" prefWidth="260" minWidth="230" maxWidth="260" styleClass="tarjeta">
-                        <Label text="Fotografía" styleClass="subtitulo"/>
-                        <StackPane prefHeight="220" minHeight="220" styleClass="marco-foto">
+                    <VBox spacing="14" alignment="TOP_CENTER" prefWidth="260" minWidth="230" maxWidth="260" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 6; -fx-border-color: #dce2ea; -fx-border-radius: 6;">
+                        <Label text="Fotografía" style="-fx-text-fill: #193e68; -fx-font-size: 16px; -fx-font-weight: bold;"/>
+                        <StackPane prefHeight="220" minHeight="220" style="-fx-background-color: #f4f6f9; -fx-border-color: #dce2ea; -fx-border-radius: 4;">
                             <ImageView fx:id="fotoView" fitWidth="210" fitHeight="210" preserveRatio="true"/>
                         </StackPane>
-                        <Label fx:id="fotoLabel" text="Sin fotografía" styleClass="nota" wrapText="true"/>
+                        <Label fx:id="fotoLabel" text="Sin fotografía" wrapText="true" style="-fx-text-fill: #596b7e; -fx-wrap-text: true;"/>
                     </VBox>
                 </HBox>
             </content>
         </ScrollPane>
     </center>
     <bottom>
-        <HBox alignment="CENTER_RIGHT" styleClass="pie">
-            <Button text="Volver" onAction="#volver" styleClass="secundario"/>
+        <HBox alignment="CENTER_RIGHT" style="-fx-padding: 16 28 20 28;">
+            <Button text="Volver" onAction="#volver" style="-fx-background-color: #e8eef6; -fx-text-fill: #193e68; -fx-padding: 10 18; -fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: #cbd5e1; -fx-cursor: hand;"/>
         </HBox>
     </bottom>
 </BorderPane>

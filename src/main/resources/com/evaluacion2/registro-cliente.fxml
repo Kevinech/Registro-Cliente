@@ -3,69 +3,69 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.image.ImageView?>
 <BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.evaluacion2.controllers.RegistroClienteController"
-            onKeyPressed="#manejarTecla" stylesheets="@styles.css" prefWidth="960" prefHeight="720">
+            onKeyPressed="#manejarTecla" prefWidth="960" prefHeight="720" style="-fx-font-family: 'Segoe UI'; -fx-font-size: 14px; -fx-background-color: #f4f6f9;">
     <fx:define><ToggleGroup fx:id="solicitudGroup"/></fx:define>
     <top>
-        <VBox spacing="6" styleClass="cabecera">
-            <Label text="Registrar cliente" styleClass="titulo"/>
-            <Label text="Completa los campos con *. La fotografía y los servicios son opcionales." styleClass="nota"/>
+        <VBox spacing="6" style="-fx-padding: 24 28 18 28;">
+            <Label text="Registrar cliente" style="-fx-text-fill: #193e68; -fx-font-size: 26px; -fx-font-weight: bold;"/>
+            <Label text="Completa los campos con *. La fotografía y los servicios son opcionales." style="-fx-text-fill: #596b7e; -fx-wrap-text: true;"/>
         </VBox>
     </top>
     <center>
-        <ScrollPane fitToWidth="true" hbarPolicy="NEVER">
+        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" style="-fx-background-color: #f4f6f9; -fx-background: #f4f6f9;">
             <content>
-                <HBox spacing="20" styleClass="formulario">
-                    <VBox spacing="12" HBox.hgrow="ALWAYS" prefWidth="540" styleClass="tarjeta">
-                        <Label text="Datos del cliente" styleClass="subtitulo"/>
+                <HBox spacing="20" style="-fx-padding: 0 28 12 28;">
+                    <VBox spacing="12" HBox.hgrow="ALWAYS" prefWidth="540" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 6; -fx-border-color: #dce2ea; -fx-border-radius: 6;">
+                        <Label text="Datos del cliente" style="-fx-text-fill: #193e68; -fx-font-size: 16px; -fx-font-weight: bold;"/>
                         <GridPane hgap="16" vgap="8">
                             <columnConstraints>
                                 <ColumnConstraints percentWidth="50" hgrow="ALWAYS"/>
                                 <ColumnConstraints percentWidth="50" hgrow="ALWAYS"/>
                             </columnConstraints>
-                            <Label text="Nombres *" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
-                            <Label text="Apellidos *" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
-                            <TextField fx:id="nombresField" promptText="Nombres" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
-                            <TextField fx:id="apellidosField" promptText="Apellidos" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
-                            <Label text="Tipo de cliente *" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
-                            <Label text="Ciudad *" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
-                            <ComboBox fx:id="tipoClienteCombo" promptText="Selecciona un tipo" maxWidth="Infinity" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
-                            <ComboBox fx:id="ciudadCombo" promptText="Selecciona una ciudad" maxWidth="Infinity" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+                            <Label text="Nombres *" GridPane.rowIndex="0" GridPane.columnIndex="0" style="-fx-text-fill: #29384a;"/>
+                            <Label text="Apellidos *" GridPane.rowIndex="0" GridPane.columnIndex="1" style="-fx-text-fill: #29384a;"/>
+                            <TextField fx:id="nombresField" promptText="Nombres" GridPane.rowIndex="1" GridPane.columnIndex="0" style="-fx-background-color: white; -fx-border-color: #cbd5e1; -fx-border-radius: 4; -fx-background-radius: 4; -fx-padding: 9;"/>
+                            <TextField fx:id="apellidosField" promptText="Apellidos" GridPane.rowIndex="1" GridPane.columnIndex="1" style="-fx-background-color: white; -fx-border-color: #cbd5e1; -fx-border-radius: 4; -fx-background-radius: 4; -fx-padding: 9;"/>
+                            <Label text="Tipo de cliente *" GridPane.rowIndex="2" GridPane.columnIndex="0" style="-fx-text-fill: #29384a;"/>
+                            <Label text="Ciudad *" GridPane.rowIndex="2" GridPane.columnIndex="1" style="-fx-text-fill: #29384a;"/>
+                            <ComboBox fx:id="tipoClienteCombo" promptText="Selecciona un tipo" maxWidth="Infinity" GridPane.rowIndex="3" GridPane.columnIndex="0" style="-fx-background-color: white; -fx-border-color: #cbd5e1; -fx-border-radius: 4; -fx-background-radius: 4;"/>
+                            <ComboBox fx:id="ciudadCombo" promptText="Selecciona una ciudad" maxWidth="Infinity" GridPane.rowIndex="3" GridPane.columnIndex="1" style="-fx-background-color: white; -fx-border-color: #cbd5e1; -fx-border-radius: 4; -fx-background-radius: 4;"/>
                         </GridPane>
-                        <Label text="Fecha de nacimiento *"/>
-                        <DatePicker fx:id="fechaNacimientoPicker" promptText="Selecciona una fecha" maxWidth="Infinity"/>
-                        <Label text="Tipo de solicitud *" styleClass="subtitulo"/>
+                        <Label text="Fecha de nacimiento *" style="-fx-text-fill: #29384a;"/>
+                        <DatePicker fx:id="fechaNacimientoPicker" promptText="Selecciona una fecha" maxWidth="Infinity" style="-fx-background-color: white; -fx-border-color: #cbd5e1; -fx-border-radius: 4; -fx-background-radius: 4;"/>
+                        <Label text="Tipo de solicitud *" style="-fx-text-fill: #193e68; -fx-font-size: 16px; -fx-font-weight: bold;"/>
                         <FlowPane hgap="16" vgap="8">
-                            <RadioButton text="Información" toggleGroup="$solicitudGroup"/>
-                            <RadioButton text="Servicio" toggleGroup="$solicitudGroup"/>
-                            <RadioButton text="Reclamo" toggleGroup="$solicitudGroup"/>
+                            <RadioButton text="Información" toggleGroup="$solicitudGroup" style="-fx-text-fill: #29384a;"/>
+                            <RadioButton text="Servicio" toggleGroup="$solicitudGroup" style="-fx-text-fill: #29384a;"/>
+                            <RadioButton text="Reclamo" toggleGroup="$solicitudGroup" style="-fx-text-fill: #29384a;"/>
                         </FlowPane>
-                        <Label text="Servicios de interés" styleClass="subtitulo"/>
+                        <Label text="Servicios de interés" style="-fx-text-fill: #193e68; -fx-font-size: 16px; -fx-font-weight: bold;"/>
                         <FlowPane hgap="16" vgap="8">
-                            <CheckBox fx:id="asesoriaCheck" text="Asesoría" onAction="#actualizarServicios"/>
-                            <CheckBox fx:id="soporteCheck" text="Soporte" onAction="#actualizarServicios"/>
-                            <CheckBox fx:id="seguimientoCheck" text="Seguimiento" onAction="#actualizarServicios"/>
+                            <CheckBox fx:id="asesoriaCheck" text="Asesoría" onAction="#actualizarServicios" style="-fx-text-fill: #29384a;"/>
+                            <CheckBox fx:id="soporteCheck" text="Soporte" onAction="#actualizarServicios" style="-fx-text-fill: #29384a;"/>
+                            <CheckBox fx:id="seguimientoCheck" text="Seguimiento" onAction="#actualizarServicios" style="-fx-text-fill: #29384a;"/>
                         </FlowPane>
-                        <Label text="Servicios seleccionados" styleClass="nota"/>
-                        <ListView fx:id="serviciosList" prefHeight="95" minHeight="95"/>
+                        <Label text="Servicios seleccionados" style="-fx-text-fill: #596b7e; -fx-wrap-text: true;"/>
+                        <ListView fx:id="serviciosList" prefHeight="95" minHeight="95" style="-fx-border-color: #dce2ea; -fx-background-color: white;"/>
                     </VBox>
-                    <VBox spacing="14" alignment="TOP_CENTER" prefWidth="260" minWidth="230" maxWidth="260" styleClass="tarjeta">
-                        <Label text="Fotografía" styleClass="subtitulo"/>
-                        <StackPane prefHeight="220" minHeight="220" styleClass="marco-foto">
+                    <VBox spacing="14" alignment="TOP_CENTER" prefWidth="260" minWidth="230" maxWidth="260" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 6; -fx-border-color: #dce2ea; -fx-border-radius: 6;">
+                        <Label text="Fotografía" style="-fx-text-fill: #193e68; -fx-font-size: 16px; -fx-font-weight: bold;"/>
+                        <StackPane prefHeight="220" minHeight="220" style="-fx-background-color: #f4f6f9; -fx-border-color: #dce2ea; -fx-border-radius: 4;">
                             <ImageView fx:id="fotoView" fitWidth="210" fitHeight="210" preserveRatio="true"/>
                         </StackPane>
-                        <Label fx:id="fotoLabel" text="Sin fotografía" styleClass="nota" wrapText="true" maxWidth="220"/>
-                        <Button text="Seleccionar fotografía" onAction="#seleccionarFoto" maxWidth="Infinity"/>
-                        <Label text="Formatos: PNG, JPG o GIF." styleClass="nota"/>
+                        <Label fx:id="fotoLabel" text="Sin fotografía" wrapText="true" maxWidth="220" style="-fx-text-fill: #596b7e; -fx-wrap-text: true;"/>
+                        <Button text="Seleccionar fotografía" onAction="#seleccionarFoto" maxWidth="Infinity" style="-fx-background-color: #2563ab; -fx-text-fill: white; -fx-padding: 10 18; -fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: transparent; -fx-cursor: hand;"/>
+                        <Label text="Formatos: PNG, JPG o GIF." style="-fx-text-fill: #596b7e; -fx-wrap-text: true;"/>
                     </VBox>
                 </HBox>
             </content>
         </ScrollPane>
     </center>
     <bottom>
-        <HBox spacing="12" alignment="CENTER_RIGHT" styleClass="pie">
-            <Button text="Volver" onAction="#volver" styleClass="secundario"/>
-            <Button text="Limpiar" onAction="#limpiar" styleClass="secundario"/>
-            <Button text="Guardar" onAction="#guardar"/>
+        <HBox spacing="12" alignment="CENTER_RIGHT" style="-fx-padding: 16 28 20 28;">
+            <Button text="Volver" onAction="#volver" style="-fx-background-color: #e8eef6; -fx-text-fill: #193e68; -fx-padding: 10 18; -fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: #cbd5e1; -fx-cursor: hand;"/>
+            <Button text="Limpiar" onAction="#limpiar" style="-fx-background-color: #e8eef6; -fx-text-fill: #193e68; -fx-padding: 10 18; -fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: #cbd5e1; -fx-cursor: hand;"/>
+            <Button text="Guardar" onAction="#guardar" style="-fx-background-color: #2563ab; -fx-text-fill: white; -fx-padding: 10 18; -fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: transparent; -fx-cursor: hand;"/>
         </HBox>
     </bottom>
 </BorderPane>
